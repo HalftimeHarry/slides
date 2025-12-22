@@ -1,0 +1,14 @@
+import { type Snippet } from 'svelte';
+import 'reveal.js/dist/reveal.css';
+type Options = {
+    reload?: boolean;
+};
+type PresentationProps = {
+    [key: string]: any;
+    children?: Snippet;
+    options?: Reveal.Options & Options;
+    class?: string;
+};
+declare const Presentation: import("svelte").Component<PresentationProps, {}, "">;
+type Presentation = ReturnType<typeof Presentation>;
+export default Presentation;

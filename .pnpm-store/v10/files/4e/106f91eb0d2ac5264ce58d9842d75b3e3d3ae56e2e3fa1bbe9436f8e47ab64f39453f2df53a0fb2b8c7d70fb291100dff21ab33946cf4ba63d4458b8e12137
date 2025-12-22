@@ -1,0 +1,12 @@
+type Props = {
+    codec?: string;
+    fps?: number;
+    videoBitrate?: number;
+    audioBitrate?: number;
+    systemAudio?: boolean;
+    useMicrophone?: boolean;
+    useTimer?: boolean;
+};
+declare const Recorder: import("svelte").Component<Props, {}, "">;
+type Recorder = ReturnType<typeof Recorder>;
+export default Recorder;

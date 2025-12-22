@@ -1,0 +1,60 @@
+import { Tween as SvelteTween } from 'svelte/motion';
+import { cubicInOut } from 'svelte/easing';
+import { interpolate } from './interpolate.js';
+function isObject(value) {
+    return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+class Tween {
+    #tween;
+    #default;
+    /**
+     * @deprecated use `.current` instead
+     */
+    value = $state();
+    constructor(value, options) {
+        this.#tween = new SvelteTween(value, {
+            duration: 1000,
+            easing: cubicInOut,
+            interpolate,
+            ...options,
+        });
+        this.#default = value;
+        // turns object properties into readonly accessors so instead of
+        // doing `obj.current.x` you can do `obj.x` to get the value
+        if (isObject(this.#tween.current)) {
+            this.#createReadonlyAccessors(this.#tween.current);
+        }
+    }
+    #createReadonlyAccessors(value) {
+        for (const key in value) {
+            Object.defineProperty(this, key, {
+                get() {
+                    return this.#tween.current[key];
+                },
+            });
+        }
+    }
+    get current() {
+        return this.#tween.current;
+    }
+    to(value, options = {}) {
+        return isObject(value)
+            ? this.#tween.set({ ...this.#tween.current, ...value }, options)
+            : this.#tween.set(value, options);
+    }
+    reset() {
+        this.#tween.set(this.#default, { duration: 0 });
+    }
+    sfx(sound, { volume = 0.5 } = {}) {
+        const audio = new Audio(sound);
+        audio.volume = volume;
+        audio.play();
+        return this;
+    }
+}
+export function tween(value, options) {
+    return new Tween(value, options);
+}
+export async function all(...tweens) {
+    return Promise.all([...tweens]);
+}

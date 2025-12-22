@@ -1,0 +1,73 @@
+{
+	"name": "@animotion/motion",
+	"version": "2.0.1",
+	"description": "Svelte animation library",
+	"author": "animotionjs",
+	"homepage": "https://animotion.pages.dev",
+	"bugs": "https://github.com/animotionjs/motion/issues",
+	"type": "module",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/animotionjs/motion.git"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"animation",
+		"library"
+	],
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run prepack",
+		"preview": "vite preview",
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test": "vitest",
+		"lint": "eslint . && prettier --check .",
+		"format": "prettier --write ."
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/package": "^2.3.7",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@types/d3-interpolate": "^3.0.4",
+		"@types/node": "^22.10.7",
+		"@typescript-eslint/eslint-plugin": "^8.20.0",
+		"@typescript-eslint/parser": "^8.20.0",
+		"@vitest/browser": "^3.0.2",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-svelte": "^2.46.1",
+		"playwright": "^1.49.1",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.3",
+		"publint": "^0.3.2",
+		"svelte": "5.19.0",
+		"svelte-check": "^4.1.4",
+		"tslib": "^2.8.1",
+		"typescript": "^5.7.3",
+		"vite": "^6.0.9",
+		"vitest": "^3.0.2",
+		"vitest-browser-svelte": "^0.1.0"
+	},
+	"dependencies": {
+		"d3-interpolate": "^3.0.1"
+	}
+}

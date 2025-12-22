@@ -1,0 +1,81 @@
+{
+  "name": "@kitschpatrol/tweakpane-plugin-inputs",
+  "version": "1.0.4-beta.4",
+  "type": "module",
+  "description": "A fork of tweakpane-plugin-inputs with build optimizations.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitschpatrol/tweakpane-plugin-inputs.git"
+  },
+  "homepage": "https://github.com/kitschpatrol/tweakpane-plugin-inputs",
+  "author": "tallneil",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "dist/tweakpane-plugin-inputs.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "npm-package",
+    "tweakpane",
+    "tweakpane-plugin"
+  ],
+  "peerDependencies": {
+    "tweakpane": "^4.0.0"
+  },
+  "dependencies": {
+    "@tweakpane/core": "^2.0.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "autoprefixer": "^10.4.20",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.0.0",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-pkg": "^0.18.1",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.34.9",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "sass": "^1.85.1",
+    "typescript": "^5.8.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:dev": "rollup --config rollup.config.js",
+    "build:dts": "tsc --project src/tsconfig-dts.json",
+    "build:prod": "rollup --config rollup.config.js --environment BUILD:production",
+    "clean": "rimraf dist",
+    "format": "run-p format:*",
+    "format:scss": "prettier --parser scss --write \"src/sass/**/*.scss\"",
+    "format:ts": "eslint --fix \"src/**/*.ts\"",
+    "release": "bumpp --commit 'Release: %s' --tag '%s' && pnpm run build && pnpm publish --tag latest --otp $(op read 'op://Personal/Npmjs/one-time password?attribute=otp')",
+    "server": "http-server -c-1 -o /test/browser.html",
+    "start": "run-p watch server",
+    "test": "eslint \"src/**/*.ts\"",
+    "watch": "run-p watch:*",
+    "watch:sass": "onchange --initial --kill \"src/sass/**/*.scss\" -- npm run build:dev",
+    "watch:ts": "onchange --initial --kill \"src/**/*.ts\" -- rollup --config rollup.config.js"
+  }
+}

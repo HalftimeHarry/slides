@@ -1,0 +1,29 @@
+import { Code } from '../index.js';
+import { type BundledLanguage, type BundledTheme, type SpecialLanguage } from 'shiki';
+import type { MagicMoveDifferOptions, MagicMoveRenderOptions } from 'shiki-magic-move/types';
+import '../styles/shiki.css';
+type Lang = BundledLanguage | SpecialLanguage;
+type Theme = BundledTheme;
+type CodeProp = {
+    code: string;
+    codes?: never;
+};
+type CodesProp = {
+    code?: never;
+    codes: string[];
+};
+type CodeProps = (CodeProp | CodesProp) & {
+    lang: Lang;
+    theme: Theme;
+    options?: MagicMoveRenderOptions & MagicMoveDifferOptions;
+    autoIndent?: boolean;
+    class?: string;
+    ref?: (self: ReturnType<typeof Code>) => void;
+};
+declare const Code: import("svelte").Component<CodeProps, {
+    update: (strings: TemplateStringsArray, ...expressions: string[]) => Promise<void>;
+    selectLines: (string: TemplateStringsArray) => Promise<unknown[]> | undefined;
+    selectToken: (string: TemplateStringsArray) => Promise<unknown[]> | undefined;
+}, "">;
+type Code = ReturnType<typeof Code>;
+export default Code;

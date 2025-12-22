@@ -1,0 +1,7 @@
+import type { Snippet } from 'svelte';
+type NotesProps = {
+    children: Snippet;
+};
+declare const Notes: import("svelte").Component<NotesProps, {}, "">;
+type Notes = ReturnType<typeof Notes>;
+export default Notes;

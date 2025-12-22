@@ -1,0 +1,72 @@
+{
+  "name": "@kitschpatrol/tweakpane-plugin-rotation",
+  "version": "0.2.1-beta.2",
+  "description": "A fork of tweakpane-plugin-rotation with build optimizations.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitschpatrol/tweakpane-plugin-rotation.git"
+  },
+  "homepage": "https://0b5vr.com/tweakpane-plugin-rotation",
+  "author": "0b5vr",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "dist/tweakpane-plugin-rotation.js",
+  "type": "module",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "npm-package",
+    "tweakpane",
+    "tweakpane-plugin"
+  ],
+  "peerDependencies": {
+    "tweakpane": "^4.0.0"
+  },
+  "dependencies": {
+    "@tweakpane/core": "^2.0.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "autoprefixer": "^10.4.20",
+    "bumpp": "^10.0.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.5.3",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.34.9",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "sass": "^1.85.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:dev": "rollup --config rollup.config.js",
+    "build:dts": "tsc --project src/tsconfig-dts.json",
+    "build:prod": "rollup --config rollup.config.js --environment BUILD:production",
+    "build": "run-p build:*",
+    "clean": "rimraf dist",
+    "release": "bumpp --commit 'Release: %s' --tag '%s' && pnpm run build && pnpm publish --tag latest --otp $(op read 'op://Personal/Npmjs/one-time password?attribute=otp')",
+    "server": "http-server -c-1 -o /index.html",
+    "start": "run-p watch server",
+    "test": "eslint --ext .ts \"src/**/*.ts\"",
+    "version": "run-s clean build",
+    "watch:sass": "onchange --initial --kill \"src/sass/**/*.scss\" -- npm run build:dev",
+    "watch:ts": "onchange --initial --kill \"src/**/*.ts\" -- rollup --config rollup.config.js",
+    "watch": "run-p watch:*"
+  }
+}

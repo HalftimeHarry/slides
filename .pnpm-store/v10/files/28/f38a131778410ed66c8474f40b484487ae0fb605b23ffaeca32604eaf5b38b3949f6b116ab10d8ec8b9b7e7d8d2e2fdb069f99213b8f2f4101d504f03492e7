@@ -1,0 +1,3 @@
+export function defineProps(props) {
+    return props;
+}

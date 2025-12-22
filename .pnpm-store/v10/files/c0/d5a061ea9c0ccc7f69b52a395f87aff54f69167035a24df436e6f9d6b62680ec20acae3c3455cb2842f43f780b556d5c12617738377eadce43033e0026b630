@@ -1,0 +1,6 @@
+import type { Component } from 'svelte';
+declare const Slides: Component<{
+    center?: boolean;
+}, {}, "">;
+type Slides = ReturnType<typeof Slides>;
+export default Slides;

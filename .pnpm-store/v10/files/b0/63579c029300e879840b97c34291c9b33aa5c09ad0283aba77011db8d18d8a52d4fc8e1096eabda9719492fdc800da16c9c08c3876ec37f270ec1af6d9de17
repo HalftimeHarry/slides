@@ -1,0 +1,81 @@
+{
+  "name": "@kitschpatrol/tweakpane-plugin-waveform",
+  "version": "1.0.4-beta.3",
+  "type": "module",
+  "description": "A fork of tweakpane-plugin-waveform with build optimizations.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitschpatrol/tweakpane-plugin-waveform.git"
+  },
+  "author": "shoelder",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "dist/tweakpane-plugin-waveform.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "npm-package",
+    "tweakpane",
+    "tweakpane-plugin"
+  ],
+  "peerDependencies": {
+    "tweakpane": "^4.0.0"
+  },
+  "dependencies": {
+    "@tweakpane/core": "^2.0.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@typescript-eslint/eslint-plugin": "~8.5.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "autoprefixer": "^10.4.20",
+    "bumpp": "^10.0.3",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "glob": "^11.0.1",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-pkg": "^0.18.1",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.34.9",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "sass": "^1.85.1",
+    "typescript": "~5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "assets": "run-s clean build assets:version assets:zip",
+    "assets:version": "node scripts/assets-append-version.js",
+    "assets:zip": "zip -x '*types*' -j -r $(node scripts/dist-name.js)-$(cat package.json | npx json version).zip dist",
+    "build": "run-p build:*",
+    "build:dev": "rollup --config rollup.config.js",
+    "build:dts": "tsc --project src/tsconfig-dts.json",
+    "build:prod": "rollup --config rollup.config.js --environment BUILD:production",
+    "clean": "rimraf dist *.tgz *.zip",
+    "format": "run-p format:*",
+    "format:scss": "prettier --parser scss --write \"src/sass/**/*.scss\"",
+    "format:ts": "eslint --ext .ts --fix \"src/**/*.ts\"",
+    "postversion": "git push --tags",
+    "release": "bumpp --commit 'Release: %s' --tag '%s' && pnpm run build && pnpm publish --tag latest --otp $(op read 'op://Personal/Npmjs/one-time password?attribute=otp')",
+    "server": "http-server -c-1 -o /test/browser.html",
+    "start": "run-p watch server",
+    "test": "eslint --ext .ts \"src/**/*.ts\"",
+    "watch": "run-p watch:*",
+    "watch:sass": "onchange --initial --kill \"src/sass/**/*.scss\" -- pnpm run build:dev",
+    "watch:ts": "onchange --initial --kill \"src/**/*.ts\" -- rollup --config rollup.config.js"
+  }
+}

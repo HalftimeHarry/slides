@@ -1,0 +1,19 @@
+import { Tween as SvelteTween } from 'svelte/motion';
+type TweenedOptions<T> = ConstructorParameters<typeof SvelteTween<T>>[1];
+declare class Tween<T> {
+    #private;
+    /**
+     * @deprecated use `.current` instead
+     */
+    value: T;
+    constructor(value: T, options?: TweenedOptions<T>);
+    get current(): T;
+    to(value: T extends object ? Partial<T> : T, options?: TweenedOptions<T>): Promise<void>;
+    reset(): void;
+    sfx(sound: string, { volume }?: {
+        volume?: number | undefined;
+    }): this;
+}
+export declare function tween<T>(value: T, options?: TweenedOptions<T>): T extends object ? Tween<T> & T : Tween<T>;
+export declare function all(...tweens: Promise<void>[]): Promise<void[]>;
+export {};

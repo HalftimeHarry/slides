@@ -1,0 +1,10 @@
+import { Action } from '../index.js';
+type ActionProps = {
+    order?: number;
+    do?: () => void;
+    undo?: () => void;
+    actions?: Array<() => void>;
+};
+declare const Action: import("svelte").Component<ActionProps, {}, "">;
+type Action = ReturnType<typeof Action>;
+export default Action;

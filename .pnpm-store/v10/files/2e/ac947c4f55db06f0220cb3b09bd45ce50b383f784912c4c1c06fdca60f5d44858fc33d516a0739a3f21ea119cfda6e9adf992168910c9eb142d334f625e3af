@@ -1,0 +1,13 @@
+import { type Snippet } from 'svelte';
+import type Reveal from 'reveal.js';
+import 'reveal.js/dist/reveal.css';
+import '../styles/theme.css';
+type PresentationProps = {
+    [key: string]: any;
+    children: Snippet;
+    options?: Reveal.Options;
+    class?: string;
+};
+declare const Embed: import("svelte").Component<PresentationProps, {}, "">;
+type Embed = ReturnType<typeof Embed>;
+export default Embed;

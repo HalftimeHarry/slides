@@ -1,0 +1,15 @@
+import type { Snippet } from 'svelte';
+type TransitionProps = {
+    children?: Snippet;
+    do?: () => void;
+    undo?: () => void;
+    class?: string;
+    order?: number;
+    stepDuration?: number;
+    name?: string;
+    enter?: string;
+    visible?: boolean;
+};
+declare const Transition: import("svelte").Component<TransitionProps, {}, "">;
+type Transition = ReturnType<typeof Transition>;
+export default Transition;
