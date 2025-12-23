@@ -49,42 +49,80 @@
 					data-id="main-logo"
 				/>
 				
-				<!-- Team logos starting at center (10px up from main logo) -->
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-1">
+				<!-- Team logos starting at center (60px up from main logo) -->
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-1">
 					<img src="/images/teams/mini-logos/ace_makers_mini.jpg" alt="Ace Makers" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-2">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-2">
 					<img src="/images/teams/mini-logos/birdie_storm_mini.jpg" alt="Birdie Storm" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-3">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-3">
 					<img src="/images/teams/mini-logos/chain_breakers_mini.jpg" alt="Chain Breakers" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-4">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-4">
 					<img src="/images/teams/mini-logos/chain_seekers_mini.jpg" alt="Chain Seekers" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-5">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-5">
 					<img src="/images/teams/mini-logos/disc_dynasty_mini.jpg" alt="Disc Dynasty" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-6">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-6">
 					<img src="/images/teams/mini-logos/disk_jesters_mini.png" alt="Disk Jesters" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-7">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-7">
 					<img src="/images/teams/mini-logos/fair_way_bombers_mini.png" alt="Fairway Bombers" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-8">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-8">
 					<img src="/images/teams/mini-logos/flight_squad_mini.png" alt="Flight Squad" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-9">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-9">
 					<img src="/images/teams/mini-logos/glide_masters_miini.png" alt="Glide Masters" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-10">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-10">
 					<img src="/images/teams/mini-logos/huk_a_mania_mini.png" alt="Huk-A-Mania" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-11">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-11">
 					<img src="/images/teams/mini-logos/hyzer_heroes_mini.png" alt="Hyzer Heroes" class="w-16 h-16 object-contain" />
 				</div>
-				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-12">
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-12">
 					<img src="/images/teams/mini-logos/midas_touch_mini.png" alt="Midas Touch" class="w-16 h-16 object-contain" />
+				</div>
+				
+				<!-- Full-size team logos starting at center (60px up from main logo) -->
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-1">
+					<img src="/images/teams/logos/ace_makers_logo.png" alt="Ace Makers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-2">
+					<img src="/images/teams/logos/birdie_storm_regular.png" alt="Birdie Storm" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-3">
+					<img src="/images/teams/logos/chain_breakers_regular.jpg" alt="Chain Breakers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-4">
+					<img src="/images/teams/logos/chain_seekers_regular.png" alt="Chain Seekers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-5">
+					<img src="/images/teams/logos/disc_dynasty_regular.png" alt="Disc Dynasty" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-6">
+					<img src="/images/teams/logos/disk_jesters_regular.png" alt="Disk Jesters" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-7">
+					<img src="/images/teams/logos/fair_way_bombers_regular.png" alt="Fairway Bombers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-8">
+					<img src="/images/teams/logos/flight_squad_regular.png" alt="Flight Squad" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-9">
+					<img src="/images/teams/logos/glide_masters_regular.png" alt="Glide Masters" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-10">
+					<img src="/images/teams/logos/huk_a_mania_regular.png" alt="Huk-A-Mania" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-11">
+					<img src="/images/teams/logos/hyzer_heroes_regular.png" alt="Hyzer Heroes" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-70px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="full-logo-12">
+					<img src="/images/teams/logos/midas_touch_regular.png" alt="Midas Touch" class="w-20 h-20 object-contain" />
 				</div>
 				
 				<!-- Title content -->
@@ -98,7 +136,7 @@
 		</Layout>
 	</Slide>
 
-	<!-- Slide 1b: Title - Logos animate to left side in 4-3-3-2 pattern -->
+	<!-- Slide 1b: Title - Logos animate to left side in 2x6 grid -->
 	<Slide animate>
 		<Layout>
 			<div class="relative flex h-full flex-col items-center justify-center gap-8">
@@ -110,55 +148,86 @@
 					data-id="main-logo"
 				/>
 				
-				<!-- Team logos spread out on LEFT side - adjusted alignment -->
-				<!-- LEFT 4 LOGOS - aligned vertically -->
-				<div class="absolute left-[3rem] top-[8%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-1">
+				<!-- Team logos in 2 columns x 6 rows grid on LEFT side -->
+				<!-- Column 1 -->
+				<div class="absolute left-[8rem] top-[3%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-1">
 					<img src="/images/teams/mini-logos/ace_makers_mini.jpg" alt="Ace Makers" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[3rem] top-[28%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-2">
+				<div class="absolute left-[8rem] top-[17%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-2">
 					<img src="/images/teams/mini-logos/birdie_storm_mini.jpg" alt="Birdie Storm" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[3rem] top-[calc(48%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-3">
+				<div class="absolute left-[8rem] top-[31%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-3">
 					<img src="/images/teams/mini-logos/chain_breakers_mini.jpg" alt="Chain Breakers" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[3rem] top-[calc(68%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-4">
+				<div class="absolute left-[8rem] top-[45%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-4">
 					<img src="/images/teams/mini-logos/chain_seekers_mini.jpg" alt="Chain Seekers" class="w-20 h-20 object-contain" />
 				</div>
-				
-				<!-- MIDDLE 2 LOGOS - spaced much more -->
-				<div class="absolute left-[14rem] top-[28%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-6">
-					<img src="/images/teams/mini-logos/disk_jesters_mini.png" alt="Disk Jesters" class="w-20 h-20 object-contain" />
-				</div>
-				<div class="absolute left-[21rem] top-[calc(48%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-9">
-					<img src="/images/teams/mini-logos/glide_masters_miini.png" alt="Glide Masters" class="w-20 h-20 object-contain" />
-				</div>
-				
-				<!-- TOP ROW - spread toward center -->
-				<div class="absolute left-[16rem] top-[15%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-5">
+				<div class="absolute left-[8rem] top-[59%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-5">
 					<img src="/images/teams/mini-logos/disc_dynasty_mini.jpg" alt="Disc Dynasty" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[25rem] top-[15%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-8">
-					<img src="/images/teams/mini-logos/flight_squad_mini.png" alt="Flight Squad" class="w-20 h-20 object-contain" />
-				</div>
-				<div class="absolute left-[calc(32rem+20px)] top-[8%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-11">
-					<img src="/images/teams/mini-logos/hyzer_heroes_mini.png" alt="Hyzer Heroes" class="w-20 h-20 object-contain" />
+				<div class="absolute left-[8rem] top-[73%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-6">
+					<img src="/images/teams/mini-logos/disk_jesters_mini.png" alt="Disk Jesters" class="w-20 h-20 object-contain" />
 				</div>
 				
-				<!-- BOTTOM ROW - spread out more -->
-				<div class="absolute left-[14rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-7">
+				<!-- Column 2 -->
+				<div class="absolute left-[17rem] top-[3%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-7">
 					<img src="/images/teams/mini-logos/fair_way_bombers_mini.png" alt="Fairway Bombers" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[23rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-10">
+				<div class="absolute left-[17rem] top-[17%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-8">
+					<img src="/images/teams/mini-logos/flight_squad_mini.png" alt="Flight Squad" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[17rem] top-[31%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-9">
+					<img src="/images/teams/mini-logos/glide_masters_miini.png" alt="Glide Masters" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[17rem] top-[45%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-10">
 					<img src="/images/teams/mini-logos/huk_a_mania_mini.png" alt="Huk-A-Mania" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[14rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-7">
-					<img src="/images/teams/mini-logos/fair_way_bombers_mini.png" alt="Fairway Bombers" class="w-20 h-20 object-contain" />
+				<div class="absolute left-[17rem] top-[59%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-11">
+					<img src="/images/teams/mini-logos/hyzer_heroes_mini.png" alt="Hyzer Heroes" class="w-20 h-20 object-contain" />
 				</div>
-				<div class="absolute left-[23rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-10">
-					<img src="/images/teams/mini-logos/huk_a_mania_mini.png" alt="Huk-A-Mania" class="w-20 h-20 object-contain" />
-				</div>
-				<div class="absolute left-[31rem] top-[calc(68%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-12">
+				<div class="absolute left-[17rem] top-[73%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-12">
 					<img src="/images/teams/mini-logos/midas_touch_mini.png" alt="Midas Touch" class="w-20 h-20 object-contain" />
+				</div>
+				
+				<!-- Full-size team logos in 2 columns x 6 rows grid on RIGHT side (matching left order) -->
+				<!-- Column 1 - matches mini logo column 1 -->
+				<div class="absolute right-[17rem] top-[3%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-1">
+					<img src="/images/teams/logos/ace_makers_logo.png" alt="Ace Makers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[17rem] top-[17%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-2">
+					<img src="/images/teams/logos/birdie_storm_regular.png" alt="Birdie Storm" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[17rem] top-[31%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-3">
+					<img src="/images/teams/logos/chain_breakers_regular.jpg" alt="Chain Breakers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[17rem] top-[45%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-4">
+					<img src="/images/teams/logos/chain_seekers_regular.png" alt="Chain Seekers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[17rem] top-[59%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-5">
+					<img src="/images/teams/logos/disc_dynasty_regular.png" alt="Disc Dynasty" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[17rem] top-[73%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-6">
+					<img src="/images/teams/logos/disk_jesters_regular.png" alt="Disk Jesters" class="w-20 h-20 object-contain" />
+				</div>
+				
+				<!-- Column 2 - matches mini logo column 2 -->
+				<div class="absolute right-[8rem] top-[3%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-7">
+					<img src="/images/teams/logos/fair_way_bombers_regular.png" alt="Fairway Bombers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[8rem] top-[17%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-8">
+					<img src="/images/teams/logos/flight_squad_regular.png" alt="Flight Squad" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[8rem] top-[31%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-9">
+					<img src="/images/teams/logos/glide_masters_regular.png" alt="Glide Masters" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[8rem] top-[45%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-10">
+					<img src="/images/teams/logos/huk_a_mania_regular.png" alt="Huk-A-Mania" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[8rem] top-[59%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-11">
+					<img src="/images/teams/logos/hyzer_heroes_regular.png" alt="Hyzer Heroes" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute right-[8rem] top-[73%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="full-logo-12">
+					<img src="/images/teams/logos/midas_touch_regular.png" alt="Midas Touch" class="w-20 h-20 object-contain" />
 				</div>
 				
 				<!-- Title content -->
