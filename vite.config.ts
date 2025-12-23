@@ -4,7 +4,15 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [svelte()],
+	plugins: [
+		svelte({
+			compilerOptions: {
+				compatibility: {
+					componentApi: 4
+				}
+			}
+		})
+	],
 	server: {
 		host: '0.0.0.0',
 		port: 5173,
@@ -22,6 +30,7 @@ export default defineConfig({
 			'@lib': path.resolve(__dirname, './src/lib'),
 			'@stores': path.resolve(__dirname, './src/lib/stores'),
 			'@styles': path.resolve(__dirname, './src/lib/styles'),
+			'$lib': path.resolve(__dirname, './src/lib'),
 		},
 	},
 })

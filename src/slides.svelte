@@ -1,16 +1,170 @@
 <script lang="ts">
-	import { Presentation, Slide, Step, FitText } from '@components'
+	import { Presentation, Slide, Step, FitText, BarChart, LineChart } from '@components'
+	import Card from '$lib/components/ui/card.svelte'
 	import Layout from './layout.svelte'
+	import { 
+		TrendingUp, 
+		Users, 
+		DollarSign, 
+		Target, 
+		Zap,
+		Trophy,
+		BarChart3,
+		LineChart as LineChartIcon,
+		Shield,
+		Rocket,
+		AlertCircle,
+		CheckCircle2,
+		Circle
+	} from 'lucide-svelte'
+
+	// Data for charts
+	const revenueData = [
+		{ label: 'Y1', value: 2.5, color: '#3b82f6' },
+		{ label: 'Y2', value: 6.8, color: '#10b981' },
+		{ label: 'Y3', value: 12.5, color: '#8b5cf6' },
+		{ label: 'Y4', value: 18.2, color: '#f59e0b' },
+		{ label: 'Y5', value: 24.0, color: '#ef4444' }
+	]
+
+	const growthData = [
+		{ label: '2019', value: 2.5 },
+		{ label: '2020', value: 3.2 },
+		{ label: '2021', value: 3.8 },
+		{ label: '2022', value: 4.1 },
+		{ label: '2023', value: 4.5 }
+	]
 </script>
 
 <Presentation>
-	<!-- Slide 1: Title -->
-	<Slide>
+	<!-- Slide 1a: Title - Initial state with logos spawning from center -->
+	<Slide animate>
 		<Layout>
-			<div class="flex h-full flex-col items-center justify-center gap-8">
-				<h1 class="text-[120px] font-bold text-white">FLI GOLF</h1>
-				<p class="text-[48px] text-gray-300">The Future of Professional Disc Golf</p>
-				<div class="mt-16 text-[32px] text-gray-400">
+			<div class="relative flex h-full flex-col items-center justify-center gap-8">
+				<!-- Main logo stays centered -->
+				<img 
+					src="/images/brand/fliGolf_rwb.png" 
+					alt="FLI Golf Logo" 
+					class="w-[300px] h-auto object-contain mb-8 relative z-10"
+					data-id="main-logo"
+				/>
+				
+				<!-- Team logos starting at center (10px up from main logo) -->
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-1">
+					<img src="/images/teams/mini-logos/ace_makers_mini.jpg" alt="Ace Makers" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-2">
+					<img src="/images/teams/mini-logos/birdie_storm_mini.jpg" alt="Birdie Storm" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-3">
+					<img src="/images/teams/mini-logos/chain_breakers_mini.jpg" alt="Chain Breakers" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-4">
+					<img src="/images/teams/mini-logos/chain_seekers_mini.jpg" alt="Chain Seekers" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-5">
+					<img src="/images/teams/mini-logos/disc_dynasty_mini.jpg" alt="Disc Dynasty" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-6">
+					<img src="/images/teams/mini-logos/disk_jesters_mini.png" alt="Disk Jesters" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-7">
+					<img src="/images/teams/mini-logos/fair_way_bombers_mini.png" alt="Fairway Bombers" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-8">
+					<img src="/images/teams/mini-logos/flight_squad_mini.png" alt="Flight Squad" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-9">
+					<img src="/images/teams/mini-logos/glide_masters_miini.png" alt="Glide Masters" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-10">
+					<img src="/images/teams/mini-logos/huk_a_mania_mini.png" alt="Huk-A-Mania" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-11">
+					<img src="/images/teams/mini-logos/hyzer_heroes_mini.png" alt="Hyzer Heroes" class="w-16 h-16 object-contain" />
+				</div>
+				<div class="absolute left-1/2 top-[calc(35%-20px)] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-3" data-id="logo-12">
+					<img src="/images/teams/mini-logos/midas_touch_mini.png" alt="Midas Touch" class="w-16 h-16 object-contain" />
+				</div>
+				
+				<!-- Title content -->
+				<h1 class="text-[120px] font-bold text-white relative z-10">FLI GOLF</h1>
+				<p class="text-[48px] text-gray-300 relative z-10">The Future of Professional Disc Golf</p>
+				<div class="mt-16 text-[32px] text-gray-400 relative z-10">
+					<p>Investor Presentation</p>
+					<p class="mt-4">{new Date().getFullYear()}</p>
+				</div>
+			</div>
+		</Layout>
+	</Slide>
+
+	<!-- Slide 1b: Title - Logos animate to left side in 4-3-3-2 pattern -->
+	<Slide animate>
+		<Layout>
+			<div class="relative flex h-full flex-col items-center justify-center gap-8">
+				<!-- Main logo stays centered -->
+				<img 
+					src="/images/brand/fliGolf_rwb.png" 
+					alt="FLI Golf Logo" 
+					class="w-[300px] h-auto object-contain mb-8 relative z-10"
+					data-id="main-logo"
+				/>
+				
+				<!-- Team logos spread out on LEFT side - adjusted alignment -->
+				<!-- LEFT 4 LOGOS - aligned vertically -->
+				<div class="absolute left-[3rem] top-[8%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-1">
+					<img src="/images/teams/mini-logos/ace_makers_mini.jpg" alt="Ace Makers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[3rem] top-[28%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-2">
+					<img src="/images/teams/mini-logos/birdie_storm_mini.jpg" alt="Birdie Storm" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[3rem] top-[calc(48%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-3">
+					<img src="/images/teams/mini-logos/chain_breakers_mini.jpg" alt="Chain Breakers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[3rem] top-[calc(68%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-4">
+					<img src="/images/teams/mini-logos/chain_seekers_mini.jpg" alt="Chain Seekers" class="w-20 h-20 object-contain" />
+				</div>
+				
+				<!-- MIDDLE 2 LOGOS - spaced much more -->
+				<div class="absolute left-[14rem] top-[28%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-6">
+					<img src="/images/teams/mini-logos/disk_jesters_mini.png" alt="Disk Jesters" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[21rem] top-[calc(48%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-9">
+					<img src="/images/teams/mini-logos/glide_masters_miini.png" alt="Glide Masters" class="w-20 h-20 object-contain" />
+				</div>
+				
+				<!-- TOP ROW - spread toward center -->
+				<div class="absolute left-[16rem] top-[15%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-5">
+					<img src="/images/teams/mini-logos/disc_dynasty_mini.jpg" alt="Disc Dynasty" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[25rem] top-[15%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-8">
+					<img src="/images/teams/mini-logos/flight_squad_mini.png" alt="Flight Squad" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[calc(32rem+20px)] top-[8%] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-11">
+					<img src="/images/teams/mini-logos/hyzer_heroes_mini.png" alt="Hyzer Heroes" class="w-20 h-20 object-contain" />
+				</div>
+				
+				<!-- BOTTOM ROW - spread out more -->
+				<div class="absolute left-[14rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-7">
+					<img src="/images/teams/mini-logos/fair_way_bombers_mini.png" alt="Fairway Bombers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[23rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-10">
+					<img src="/images/teams/mini-logos/huk_a_mania_mini.png" alt="Huk-A-Mania" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[14rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-7">
+					<img src="/images/teams/mini-logos/fair_way_bombers_mini.png" alt="Fairway Bombers" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[23rem] top-[calc(61%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-10">
+					<img src="/images/teams/mini-logos/huk_a_mania_mini.png" alt="Huk-A-Mania" class="w-20 h-20 object-contain" />
+				</div>
+				<div class="absolute left-[31rem] top-[calc(68%+80px)] bg-white rounded-xl p-4 shadow-xl rotate-[1080deg]" data-id="logo-12">
+					<img src="/images/teams/mini-logos/midas_touch_mini.png" alt="Midas Touch" class="w-20 h-20 object-contain" />
+				</div>
+				
+				<!-- Title content -->
+				<h1 class="text-[120px] font-bold text-white relative z-10">FLI GOLF</h1>
+				<p class="text-[48px] text-gray-300 relative z-10">The Future of Professional Disc Golf</p>
+				<div class="mt-16 text-[32px] text-gray-400 relative z-10">
 					<p>Investor Presentation</p>
 					<p class="mt-4">{new Date().getFullYear()}</p>
 				</div>
@@ -22,7 +176,10 @@
 	<Slide animate>
 		<Layout>
 			<div class="flex h-full flex-col justify-center gap-10">
-				<h2 class="text-[80px] font-bold text-white">Challenges</h2>
+				<h2 class="text-[80px] font-bold text-white flex items-center gap-4">
+					<AlertCircle size={80} class="text-red-400" />
+					Challenges
+				</h2>
 				
 				<div class="grid grid-cols-3 gap-6 text-[28px]">
 					<Step>
@@ -90,53 +247,113 @@
 				<div class="grid grid-cols-2 gap-6">
 					<div class="space-y-4">
 						<Step>
-							<div class="rounded-lg bg-blue-900/40 p-6 border-2 border-blue-500">
-								<h3 class="text-[36px] font-bold text-blue-400 mb-3">🏟️ Arena Events</h3>
+							<Card class="bg-blue-950/60 border-blue-500/50 p-6 backdrop-blur">
+								<h3 class="text-[36px] font-bold text-blue-400 mb-3 flex items-center gap-3">
+									<Zap size={36} class="text-blue-400" />
+									Arena Events
+								</h3>
 								<ul class="space-y-2 text-[28px] text-gray-300">
-									<li>✓ Purpose-built stadium courses</li>
-									<li>✓ 5,000+ seat capacity</li>
-									<li>✓ Premium viewing angles</li>
-									<li>✓ Weather-protected venues</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-blue-400" />
+										Purpose-built stadium courses
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-blue-400" />
+										5,000+ seat capacity
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-blue-400" />
+										Premium viewing angles
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-blue-400" />
+										Weather-protected venues
+									</li>
 								</ul>
-							</div>
+							</Card>
 						</Step>
 						
 						<Step>
-							<div class="rounded-lg bg-purple-900/40 p-6 border-2 border-purple-500">
-								<h3 class="text-[36px] font-bold text-purple-400 mb-3">📺 Broadcast Production</h3>
+							<Card class="bg-purple-950/60 border-purple-500/50 p-6 backdrop-blur">
+								<h3 class="text-[36px] font-bold text-purple-400 mb-3 flex items-center gap-3">
+									<Trophy size={36} class="text-purple-400" />
+									Broadcast Production
+								</h3>
 								<ul class="space-y-2 text-[28px] text-gray-300">
-									<li>✓ Multi-camera coverage</li>
-									<li>✓ Real-time stats overlay</li>
-									<li>✓ Drone footage</li>
-									<li>✓ Professional commentary</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-purple-400" />
+										Multi-camera coverage
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-purple-400" />
+										Real-time stats overlay
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-purple-400" />
+										Drone footage
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-purple-400" />
+										Professional commentary
+									</li>
 								</ul>
-							</div>
+							</Card>
 						</Step>
 					</div>
 					
 					<div class="space-y-4">
 						<Step>
-							<div class="rounded-lg bg-green-900/40 p-6 border-2 border-green-500">
-								<h3 class="text-[36px] font-bold text-green-400 mb-3">👥 Team Structure</h3>
+							<Card class="bg-green-950/60 border-green-500/50 p-6 backdrop-blur">
+								<h3 class="text-[36px] font-bold text-green-400 mb-3 flex items-center gap-3">
+									<Users size={36} class="text-green-400" />
+									Team Structure
+								</h3>
 								<ul class="space-y-2 text-[28px] text-gray-300">
-									<li>✓ 12 franchise teams</li>
-									<li>✓ Draft system for players</li>
-									<li>✓ Team branding & merchandise</li>
-									<li>✓ Home/away format</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-green-400" />
+										12 franchise teams
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-green-400" />
+										Draft system for players
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-green-400" />
+										Team branding & merchandise
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-green-400" />
+										Home/away format
+									</li>
 								</ul>
-							</div>
+							</Card>
 						</Step>
 						
 						<Step>
-							<div class="rounded-lg bg-orange-900/40 p-6 border-2 border-orange-500">
-								<h3 class="text-[36px] font-bold text-orange-400 mb-3">🎮 Fan Engagement</h3>
+							<Card class="bg-orange-950/60 border-orange-500/50 p-6 backdrop-blur">
+								<h3 class="text-[36px] font-bold text-orange-400 mb-3 flex items-center gap-3">
+									<Rocket size={36} class="text-orange-400" />
+									Fan Engagement
+								</h3>
 								<ul class="space-y-2 text-[28px] text-gray-300">
-									<li>✓ Fantasy league platform</li>
-									<li>✓ Live betting integration</li>
-									<li>✓ Mobile app experience</li>
-									<li>✓ Social media activation</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-orange-400" />
+										Fantasy league platform
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-orange-400" />
+										Live betting integration
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-orange-400" />
+										Mobile app experience
+									</li>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 size={24} class="text-orange-400" />
+										Social media activation
+									</li>
 								</ul>
-							</div>
+							</Card>
 						</Step>
 					</div>
 				</div>
@@ -183,17 +400,35 @@
 	<Slide animate>
 		<Layout>
 			<div class="flex h-full flex-col justify-center gap-10">
-				<h2 class="text-[80px] font-bold text-white">Market Opportunity</h2>
+				<h2 class="text-[80px] font-bold text-white flex items-center gap-4">
+					<Target size={80} class="text-green-400" />
+					Market Opportunity
+				</h2>
 				
 				<div class="grid grid-cols-2 gap-8">
 					<Step>
 						<div class="rounded-lg bg-blue-900/40 p-8 border-2 border-blue-500">
-							<h3 class="text-[40px] font-bold text-blue-400 mb-6">📊 Market Size</h3>
+							<h3 class="text-[40px] font-bold text-blue-400 mb-6 flex items-center gap-3">
+								<BarChart3 size={40} class="text-blue-400" />
+								Market Size
+							</h3>
 							<div class="space-y-4 text-[32px] text-gray-300">
-								<p>• <span class="font-bold text-white">4.5M</span> active disc golfers in US</p>
-								<p>• <span class="font-bold text-white">$50M+</span> annual equipment sales</p>
-								<p>• <span class="font-bold text-white">Growing 15%</span> year-over-year</p>
-								<p>• <span class="font-bold text-white">35</span> average age demographic</p>
+								<p class="flex items-center gap-3">
+									<Users size={32} class="text-blue-400" />
+									<span><span class="font-bold text-white">4.5M</span> active disc golfers in US</span>
+								</p>
+								<p class="flex items-center gap-3">
+									<DollarSign size={32} class="text-green-400" />
+									<span><span class="font-bold text-white">$50M+</span> annual equipment sales</span>
+								</p>
+								<p class="flex items-center gap-3">
+									<TrendingUp size={32} class="text-purple-400" />
+									<span><span class="font-bold text-white">Growing 15%</span> year-over-year</span>
+								</p>
+								<p class="flex items-center gap-3">
+									<Target size={32} class="text-orange-400" />
+									<span><span class="font-bold text-white">35</span> average age demographic</span>
+								</p>
 							</div>
 							
 							<div class="mt-6 pt-6 border-t border-blue-700">
@@ -208,69 +443,12 @@
 					</Step>
 					
 					<Step>
-						<div class="rounded-lg bg-green-900/40 p-8 border-2 border-green-500">
-							<h3 class="text-[40px] font-bold text-green-400 mb-6">📈 Growth Trend (2019-2024)</h3>
-							
-							<div class="space-y-4 mb-8">
-								<div>
-									<div class="flex justify-between text-[24px] mb-2">
-										<span class="text-gray-400">2019</span>
-										<span class="font-bold text-white">2.5M</span>
-									</div>
-									<div class="bg-gray-700 rounded-full h-4">
-										<div class="bg-gradient-to-r from-green-400 to-green-600 h-full rounded-full" style="width: 50%"></div>
-									</div>
-								</div>
-								
-								<div>
-									<div class="flex justify-between text-[24px] mb-2">
-										<span class="text-gray-400">2020</span>
-										<span class="font-bold text-white">3.2M</span>
-									</div>
-									<div class="bg-gray-700 rounded-full h-4">
-										<div class="bg-gradient-to-r from-green-400 to-green-600 h-full rounded-full" style="width: 64%"></div>
-									</div>
-								</div>
-								
-								<div>
-									<div class="flex justify-between text-[24px] mb-2">
-										<span class="text-gray-400">2021</span>
-										<span class="font-bold text-white">3.8M</span>
-									</div>
-									<div class="bg-gray-700 rounded-full h-4">
-										<div class="bg-gradient-to-r from-green-400 to-green-600 h-full rounded-full" style="width: 76%"></div>
-									</div>
-								</div>
-								
-								<div>
-									<div class="flex justify-between text-[24px] mb-2">
-										<span class="text-gray-400">2022</span>
-										<span class="font-bold text-white">4.1M</span>
-									</div>
-									<div class="bg-gray-700 rounded-full h-4">
-										<div class="bg-gradient-to-r from-green-400 to-green-600 h-full rounded-full" style="width: 82%"></div>
-									</div>
-								</div>
-								
-								<div>
-									<div class="flex justify-between text-[24px] mb-2">
-										<span class="text-gray-400">2023</span>
-										<span class="font-bold text-white">4.5M</span>
-									</div>
-									<div class="bg-gray-700 rounded-full h-4">
-										<div class="bg-gradient-to-r from-green-400 to-green-600 h-full rounded-full" style="width: 90%"></div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="pt-6 border-t border-green-700">
-								<h4 class="text-[32px] font-bold text-green-300 mb-3">Key Trends</h4>
-								<div class="space-y-2 text-[28px] text-gray-300">
-									<p>📈 Post-pandemic surge</p>
-									<p>👥 Younger demographics</p>
-									<p>📱 Digital engagement rising</p>
-								</div>
-							</div>
+						<div class="rounded-lg bg-green-900/40 p-6 border-2 border-green-500">
+							<h3 class="text-[36px] font-bold text-green-400 mb-4 flex items-center gap-3">
+								<LineChartIcon size={36} class="text-green-400" />
+								Growth Trend (2019-2023)
+							</h3>
+							<LineChart data={growthData} width={800} height={400} color="#10b981" />
 						</div>
 					</Step>
 				</div>
@@ -682,12 +860,18 @@
 	<Slide animate>
 		<Layout>
 			<div class="flex h-full flex-col justify-center gap-10">
-				<h2 class="text-[80px] font-bold text-white">📊 Financial Projections</h2>
+				<h2 class="text-[80px] font-bold text-white flex items-center gap-4">
+					<BarChart3 size={80} class="text-blue-400" />
+					Financial Projections
+				</h2>
 				
 				<div class="grid grid-cols-2 gap-8">
 					<Step>
 						<div class="rounded-lg bg-gray-800/60 p-8 border-2 border-gray-600">
-							<h3 class="text-[40px] font-bold text-white mb-6">3-Year Revenue Forecast</h3>
+							<h3 class="text-[40px] font-bold text-white mb-6 flex items-center gap-3">
+								<DollarSign size={40} class="text-green-400" />
+								3-Year Forecast
+							</h3>
 							<table class="w-full text-[28px]">
 								<thead>
 									<tr class="border-b-2 border-gray-600">
@@ -720,64 +904,29 @@
 							</table>
 							
 							<div class="mt-6 space-y-2 text-[24px] text-gray-400">
-								<p>• Break-even: Month 18</p>
-								<p>• Gross margin: 45% by Y3</p>
-								<p>• CAC payback: 8 months</p>
+								<p class="flex items-center gap-2">
+									<CheckCircle2 size={20} class="text-green-400" />
+									Break-even: Month 18
+								</p>
+								<p class="flex items-center gap-2">
+									<CheckCircle2 size={20} class="text-green-400" />
+									Gross margin: 45% by Y3
+								</p>
+								<p class="flex items-center gap-2">
+									<CheckCircle2 size={20} class="text-green-400" />
+									CAC payback: 8 months
+								</p>
 							</div>
 						</div>
 					</Step>
 					
 					<Step>
-						<div class="space-y-6">
-							<div class="rounded-lg bg-blue-900/40 p-6 border-2 border-blue-500">
-								<h3 class="text-[36px] font-bold text-blue-400 mb-4">Revenue Growth</h3>
-								<div class="space-y-4">
-									<div class="flex items-center gap-4">
-										<span class="text-gray-400 w-12 text-[24px]">Y1</span>
-										<div class="flex-1 bg-gray-700 rounded-full h-4">
-											<div class="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full" style="width: 20%"></div>
-										</div>
-										<span class="text-white w-20 text-[24px]">$2.5M</span>
-									</div>
-									<div class="flex items-center gap-4">
-										<span class="text-gray-400 w-12 text-[24px]">Y2</span>
-										<div class="flex-1 bg-gray-700 rounded-full h-4">
-											<div class="bg-gradient-to-r from-green-500 to-green-600 h-full rounded-full" style="width: 54%"></div>
-										</div>
-										<span class="text-white w-20 text-[24px]">$6.8M</span>
-									</div>
-									<div class="flex items-center gap-4">
-										<span class="text-gray-400 w-12 text-[24px]">Y3</span>
-										<div class="flex-1 bg-gray-700 rounded-full h-4">
-											<div class="bg-gradient-to-r from-purple-500 to-purple-600 h-full rounded-full" style="width: 100%"></div>
-										</div>
-										<span class="text-white w-20 text-[24px]">$12.5M</span>
-									</div>
-									<div class="flex items-center gap-4">
-										<span class="text-gray-400 w-12 text-[24px]">Y4</span>
-										<div class="flex-1 bg-gray-700 rounded-full h-4">
-											<div class="bg-gradient-to-r from-orange-500 to-orange-600 h-full rounded-full" style="width: 145%"></div>
-										</div>
-										<span class="text-white w-20 text-[24px]">$18.2M</span>
-									</div>
-									<div class="flex items-center gap-4">
-										<span class="text-gray-400 w-12 text-[24px]">Y5</span>
-										<div class="flex-1 bg-gray-700 rounded-full h-4">
-											<div class="bg-gradient-to-r from-red-500 to-red-600 h-full rounded-full" style="width: 192%"></div>
-										</div>
-										<span class="text-white w-20 text-[24px]">$24.0M</span>
-									</div>
-								</div>
-							</div>
-							
-							<div class="rounded-lg bg-green-900/40 p-6 border-2 border-green-500">
-								<h3 class="text-[36px] font-bold text-green-400 mb-4">Unit Economics</h3>
-								<div class="space-y-2 text-[28px] text-gray-300">
-									<p>• Avg ticket price: <span class="font-bold text-white">$45</span></p>
-									<p>• Cost per attendee: <span class="font-bold text-white">$18</span></p>
-									<p>• Contribution margin: <span class="font-bold text-white">60%</span></p>
-								</div>
-							</div>
+						<div class="rounded-lg bg-gray-800/60 p-6 border-2 border-purple-500">
+							<h3 class="text-[36px] font-bold text-purple-400 mb-4 flex items-center gap-3">
+								<TrendingUp size={36} class="text-purple-400" />
+								Revenue Growth (5 Years)
+							</h3>
+							<BarChart data={revenueData} width={800} height={350} />
 						</div>
 					</Step>
 				</div>

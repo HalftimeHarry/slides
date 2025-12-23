@@ -9,26 +9,34 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"devDependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.4.2",
+		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@tsconfig/svelte": "^5.0.0",
+		"@types/d3": "^7.4.3",
 		"@types/node": "^20.4.4",
 		"@types/reveal.js": "^4.4.2",
 		"autoprefixer": "^10.4.14",
+		"lucide-svelte": "^0.562.0",
 		"postcss": "^8.4.27",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^3.0.0",
 		"prettier-plugin-tailwindcss": "^0.4.1",
-		"svelte": "^4.1.1",
-		"svelte-check": "^3.4.6",
-		"tailwindcss": "^3.3.3",
+		"shadcn-svelte": "^1.1.0",
+		"svelte": "^5.46.0",
+		"svelte-check": "^4.3.5",
+		"tailwindcss": "^3.4.19",
 		"tslib": "^2.6.0",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.6"
+		"vite": "^5.4.21"
 	},
 	"dependencies": {
 		"@fontsource-variable/jetbrains-mono": "^5.0.6",
 		"@fontsource-variable/manrope": "^5.0.5",
-		"reveal.js": "^4.5.0"
+		"bits-ui": "^2.14.4",
+		"clsx": "^2.1.1",
+		"d3": "^7.9.0",
+		"reveal.js": "^4.5.0",
+		"tailwind-merge": "^3.4.0",
+		"tailwind-variants": "^3.2.2"
 	}
 }

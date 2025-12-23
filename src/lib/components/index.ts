@@ -9,6 +9,8 @@ import Stack from './stack.svelte'
 import Step from './step.svelte'
 import Stretch from './stretch.svelte'
 import Vertical from './vertical.svelte'
+import BarChart from './bar-chart.svelte'
+import LineChart from './line-chart.svelte'
 
 export {
 	Code,
@@ -22,4 +24,6 @@ export {
 	Step,
 	Stretch,
 	Vertical,
+	BarChart,
+	LineChart,
 }

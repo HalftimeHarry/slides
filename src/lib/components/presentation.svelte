@@ -13,7 +13,7 @@
 		const deck = new Reveal(options)
 
 		// keep track of current slide
-		deck.on('slidechanged', (event: CustomEvent) => {
+		deck.on('slidechanged', (event: any) => {
 			// update navigation store
 			updateSlideStore(deck)
 		})
