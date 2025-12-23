@@ -4,7 +4,17 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="https://fav.farm/🪄" />
-		<title>Animotion</title>
+		<title>FLI Golf - Investor Presentation</title>
+		<!-- Print PDF stylesheet -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) 
+				? 'https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/css/print/pdf.css' 
+				: 'https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
 	</head>
 	<body>
 		<div id="app"></div>

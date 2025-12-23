@@ -15,8 +15,23 @@
 		Rocket,
 		AlertCircle,
 		CheckCircle2,
-		Circle
+		Circle,
+		Printer
 	} from 'lucide-svelte'
+
+	function handlePrint() {
+		// Get base URL without query params or hash
+		const baseUrl = window.location.origin + window.location.pathname
+		const printUrl = baseUrl + '?print-pdf'
+		console.log('Opening print URL:', printUrl)
+		
+		const newWindow = window.open(printUrl, '_blank')
+		
+		// Check if popup was blocked
+		if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+			alert('Popup blocked! Please allow popups for this site, or manually add ?print-pdf to the URL')
+		}
+	}
 
 	// Data for charts
 	const revenueData = [
@@ -41,6 +56,16 @@
 	<Slide animate>
 		<Layout>
 			<div class="relative flex h-full flex-col items-center justify-center gap-8">
+				<!-- Print Button -->
+				<button 
+					on:click={handlePrint}
+					class="absolute top-8 right-8 z-50 flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-lg transition-colors duration-200"
+					title="Export to PDF"
+				>
+					<Printer size={20} />
+					<span class="text-sm font-medium">Export PDF</span>
+				</button>
+				
 				<!-- Main logo stays centered -->
 				<img 
 					src="/images/brand/fliGolf_rwb.png" 
